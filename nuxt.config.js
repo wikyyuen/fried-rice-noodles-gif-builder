@@ -17,9 +17,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script:[
+    script: [
       {
-        src:'https://cdn.bootcdn.net/ajax/libs/gifshot/0.3.2/gifshot.js',
+        src: 'https://cdn.bootcdn.net/ajax/libs/gifshot/0.3.2/gifshot.js',
         type: 'text/javascript'
       },
     ],
@@ -59,5 +59,9 @@ export default {
     //     })
     //   }
     // }
+  },
+  router: {
+    base: './'
   }
+
 }
