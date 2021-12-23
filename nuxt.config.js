@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'diaotu',
+    title: '炒粉gif生成器',
     htmlAttrs: {
       lang: 'en'
     },
@@ -15,13 +15,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
     ],
     script: [
-      {
-        src: 'https://cdn.bootcdn.net/ajax/libs/gifshot/0.3.2/gifshot.js',
-        type: 'text/javascript'
-      },
+      // {
+      //   src: 'https://cdn.bootcdn.net/ajax/libs/gifshot/0.3.2/gifshot.js',
+      //   type: 'text/javascript'
+      // },
     ],
   },
 
