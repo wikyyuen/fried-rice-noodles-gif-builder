@@ -3,24 +3,27 @@
   <div>
     <el-container>
       <el-header>
-        <div>
-          <el-row type="flex" class="row-bg" justify="center">
-            <el-col :span="2"
-              ><span font-weight="bold">炒粉GIF生成器</span></el-col
-            >
-          </el-row>
-        </div>
+        <el-row >
+          <el-col ><span style="font-weight: bold" >炒粉GIF生成器</span></el-col>
+        </el-row>
       </el-header>
       <el-main>
-        <el-row type="flex" class="row-bg" justify="center" align="middle">
-          <div height="220px" width="220px">
-            <i class="el-icon-loading" v-show="loading"></i>
-            <!-- <div id="gif" v-show="!loading"></div> -->
-            <img :src="img_gif" alt="" />
-          </div>
+        <el-row  >
+          <el-col :span="6">
+            <div>
+              <el-image
+                style="width: 240px; height: 220px"
+                :src="img_gif"                  
+              >
+                <div slot="error" class="image-slot">
+                  <i class="el-icon-loading"></i>
+                </div>
+              </el-image>
+            </div>
+          </el-col>
         </el-row>
-        <el-row :gutter="20" type="flex" class="row-bg" justify="center">
-          <el-col :span="3">
+        <el-row :gutter="20" class="row-bg" justify="center">
+          <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
             <el-select placeholder="请选择" v-model="gif_type">
               <el-option
                 v-for="item in options"
@@ -31,7 +34,7 @@
               </el-option>
             </el-select>
           </el-col>
-          <el-col :span="3">
+          <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
             <el-input
               class="grid-content"
               v-model="right_up_input"
@@ -40,7 +43,7 @@
               show-word-limit
             ></el-input>
           </el-col>
-          <el-col :span="3">
+          <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
             <el-input
               class="grid-content"
               v-model="position"
@@ -49,7 +52,7 @@
               show-word-limit
             ></el-input>
           </el-col>
-          <el-col :span="3">
+          <el-col :xs="24" :sm="24" :md="8" :lg="3" :xl="3">
             <el-button
               class="grid-content"
               type="primary"
@@ -60,8 +63,8 @@
         </el-row>
       </el-main>
       <el-footer>
-        <el-row type="flex" class="row-bg" justify="center">
-          <el-col :span="4"><span>Created By Yuen，仅供学习</span></el-col>
+        <el-row class="row-bg" justify="center">
+          <el-col><span>Created By Yuen，仅供学习</span></el-col>
         </el-row>
       </el-footer>
     </el-container>
@@ -83,6 +86,7 @@ export default {
       position: "PHP",
       loading: true,
       img_gif: "",
+      // gif:"",
       gif_type: "barbecue",
       options: [
         {
@@ -221,9 +225,9 @@ export default {
         });
         promise_list.push(pro);
       });
-      Promise.all(promise_list).then(()=>{
-        func(new_images)
-        });
+      Promise.all(promise_list).then(() => {
+        func(new_images);
+      });
     },
     reflushGif() {
       this.loading = true;
@@ -246,8 +250,7 @@ export default {
         gif_name: gif_msg.name,
       };
       // this.mergePic(images, style, input, new_images, this.createGIF);
-      this.mergePic(images, style, input,this.createGIF);
-      
+      this.mergePic(images, style, input, this.createGIF);
     },
   },
 };
